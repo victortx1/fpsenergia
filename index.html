@@ -17,6 +17,12 @@
 
 <body>
 
+  <div class="energy-loader">
+  <div class="energy-line"></div>
+  <span>FPS ENGENHARIA</span>
+</div>
+
+
 <!-- BOTÃO WHATSAPP -->
 <a href="https://wa.me/557381263235" class="whatsapp-float" target="_blank">
   <abbr title="Fale conosco no WhatsApp.">💬</abbr>
@@ -378,6 +384,31 @@
 <script src="script.js"></script>
 
 
+  <!-- SEU SITE TODO AQUI -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <script>
+  window.addEventListener('load', () => {
+    gsap.timeline()
+      .to('.energy-line', { duration: 1.8 })
+      .to('.energy-loader', {
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        onComplete: () =>
+          document.querySelector('.energy-loader').remove()
+      })
+      .from('header .content', {
+        opacity: 0,
+        y: 80,
+        duration: 1.2,
+        ease: 'power4.out'
+      }, '-=0.4');
+  });
+  </script>
+</body>
+</html>
 
 </body>
 </html>
